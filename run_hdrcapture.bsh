@@ -1,0 +1,38 @@
+#! /bin/bash
+
+## camera field of view (for evalglare)
+vv=97.2
+vh=190
+
+## set the path variable, particularly useful if you're using cron to schedule captures
+export PATH=$PATH:~/radiance/bin/:/home/pi/piHDR
+
+# move to the directory
+cd /home/pi/piHDR
+ 
+# create a directory with date and time. The $dir variable is also used for filenames
+dir=`date +"%m%d_%H%M"`
+mkdir $dir
+cd $dir
+
+# call the python script to control the camera
+python exposurebracket.py
+
+# create the HDR image (get hdrgen from anyhere.com)
+hdrgen -a -r ../picam.rsp -o ${dir}.hdr ldr_0?.jpg
+
+# make a smaller image for quicker analysis
+pfilt -1 -e 1 -x 800 -y 600 ${dir}.hdr > ${dir}.pic
+
+# calculate glare metrics
+evalglare -vta -vv $vv -vh $vh ${dir}.pic > glare.txt &
+
+#create a falsecolor image & convert to tif
+falsecolor -s 20000 -log 3 -ip ${dir}.pic | ra_tiff -z - ${dir}_f.tif &
+
+#create a tone mapped luminance photo
+pcond ${dir}.pic | ra_tiff -z - ${dir}.tif &
+
+# wait for the three background analysis processes above to complete. 
+wait
+ 
