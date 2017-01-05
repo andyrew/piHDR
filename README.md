@@ -6,14 +6,6 @@ Scripts for capturing and processing HDR images on a raspberry pi
 ### How to use:
 execute `./run_hdrcapture.bsh` to capture exposure bracketed jpgs, create an HDR image, calculate glare metrics, crate a falsecolor image, and create a tone-mapped image.  
 <br>
-<br>
-
-## Setting up dependencies
-Dependencies include:
-* Radiance (pfilt, evalglare, pcond, falsecolor, ra_tiff http://www.radiance-online.org/)
-* genHDR (http://www.anyhere.com/)
-* python
-* picamera
 
 ### Using cron to schedule regular captures.
 Use `crontab -e` to edit crontab file
@@ -23,6 +15,15 @@ To capture an hdr image every 5 minutes between 8AM and 7PM on weekdays, add thi
 */5 8-19 * * 1-5  bash /home/pi/piHDR/run_hdrcapture.bsh
 ```
 Make sure the pi is set to auto login to the user with the crontab file.
+<br>
+<br>
+
+## Setting up dependencies
+Dependencies include:
+* Radiance (pfilt, evalglare, pcond, falsecolor, ra_tiff http://www.radiance-online.org/)
+* genHDR (http://www.anyhere.com/)
+* python
+* picamera
 
 ### Compiling Radiance for Raspberry Pi
 ```
