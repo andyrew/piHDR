@@ -31,14 +31,26 @@ cd ray
 sudo ./makeall install
 ```
 
-###Watchits:###
-* Make sure your camera module is enabled using raspi-config
-* Make sure you have the python library picamera
-* Set the field of view variables in run_hdrcapture.bsh for your camera + lens combo
-* Make sure the path to piHDR in run_hdrcapture.bsh is valid.
+### Installing genHDR ###
+```
+wget http://www.anyhere.com/gward/pickup/hdrgen_AMDRaspian.tar.gz
+tar -xf hdrgen_AMDRaspian.tar.gz
+sudo mv hdrgen /usr/local/bin/.
+sudo mv hdrcvt /usr/local/bin/.
+```
+
+### Enabling the camera module ###
+```
+sudo raspi-config
+select "5 Interfacing Options"
+select "P1 Camera"
+select "Yes"
+
+sudo reboot
+```
 
 ### Disable Camera LED ###
-http://www.raspberrypi-spy.co.uk/2013/05/how-to-disable-the-red-led-on-the-pi-camera-module/
+The red LED on the camera module can affect your images, especially if you use clip on lenses. The instructions to disable the LED below come from this website: http://www.raspberrypi-spy.co.uk/2013/05/how-to-disable-the-red-led-on-the-pi-camera-module/
 ```
 sudo nano /boot/config.txt
 ```
@@ -46,4 +58,11 @@ add the following:
 ```
 disable_camera_led=1
 ```
+
+###Watchits:###
+* Make sure your camera module is enabled using raspi-config 
+* Make sure you have the python library picamera
+* Set the field of view variables in run_hdrcapture.bsh for your camera + lens combo
+* Make sure the path to piHDR in run_hdrcapture.bsh is valid.
+
  
