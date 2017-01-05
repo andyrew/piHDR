@@ -5,7 +5,8 @@ Scripts for capturing and processing HDR images on a raspberry pi
 
 ### How to use:
 execute `./run_hdrcapture.bsh` to capture exposure bracketed jpgs, create an HDR image, calculate glare metrics, crate a falsecolor image, and create a tone-mapped image.  
-  
+<br>
+<br>
 
 ## Setting up dependencies
 Dependencies include:
