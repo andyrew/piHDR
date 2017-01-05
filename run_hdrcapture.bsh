@@ -8,7 +8,7 @@ vh=190
 cd /home/pi/piHDR
  
 # create a directory with date and time. The $dir variable is also used for filenames
-dir=`date +"%m%d_%H%M"`
+dir=`date +"%y%m%d_%H%M"`
 mkdir $dir
 cd $dir
 
