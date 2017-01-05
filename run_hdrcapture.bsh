@@ -16,7 +16,7 @@ mkdir $dir
 cd $dir
 
 # call the python script to control the camera
-python exposurebracket.py
+python ../exposurebracket.py
 
 # create the HDR image (get hdrgen from anyhere.com)
 hdrgen -a -r ../picam.rsp -o ${dir}.hdr ldr_0?.jpg
