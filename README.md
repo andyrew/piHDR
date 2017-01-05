@@ -19,6 +19,17 @@ To capture an hdr image every 5 minutes between 8AM and 7PM on weekdays, add thi
 ```
 Make sure the pi is set to auto login to the user with the crontab file.
 
+### Compiling Radiance for Raspberry Pi ###
+```
+sudo apt-get install tcsh
+sudo apt-get install libx11-dev
+wget http://www.radiance-online.org/software/snapshots/radiance-HEAD.tgz
+wget http://www.radiance-online.org/download-install/radiance-source-code/latest-release/rad5R0supp.tar.gz
+tar -xf radiance-HEAD.tgz
+tar -xf rad5R0supp.tar.gz
+cd ray
+sudo ./makeall install
+```
 
 ###Watchits:###
 * Make sure your camera module is enabled using raspi-config
@@ -26,4 +37,13 @@ Make sure the pi is set to auto login to the user with the crontab file.
 * Set the field of view variables in run_hdrcapture.bsh for your camera + lens combo
 * Make sure the path to piHDR in run_hdrcapture.bsh is valid.
 
+### Disable Camera LED ###
+http://www.raspberrypi-spy.co.uk/2013/05/how-to-disable-the-red-led-on-the-pi-camera-module/
+```
+sudo nano /boot/config.txt
+```
+add the following:
+```
+disable_camera_led=1
+```
  
