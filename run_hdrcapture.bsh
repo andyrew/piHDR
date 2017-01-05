@@ -4,6 +4,9 @@
 vv=97.2
 vh=190
 
+## set the path variable, particularly useful if you're using cron to schedule captures
+export PATH=$PATH:/usr/local/bin/:/home/pi/piHDR
+
 # move to the directory
 cd /home/pi/piHDR
  
