@@ -1,5 +1,5 @@
 # piHDR
-Scripts for capturing and processing HDR images on a raspberry pi
+Scripts for capturing and processing HDR images on a raspberry pi with a raspberrypi compatable camera module
   
 
 
