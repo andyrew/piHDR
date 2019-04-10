@@ -29,8 +29,8 @@ Dependencies include:
 ```
 sudo apt-get install tcsh
 sudo apt-get install libx11-dev
-wget http://www.radiance-online.org/software/snapshots/radiance-HEAD.tgz
-wget http://www.radiance-online.org/download-install/radiance-source-code/latest-release/rad5R0supp.tar.gz
+wget --no-check-certificate http://www.radiance-online.org/software/snapshots/radiance-HEAD.tgz
+wget --no-check-certificate http://www.radiance-online.org/download-install/radiance-source-code/latest-release/rad5R0supp.tar.gz
 tar -xf radiance-HEAD.tgz
 tar -xf rad5R0supp.tar.gz
 cd ray
