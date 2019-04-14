@@ -7,7 +7,17 @@ from fractions import Fraction
 # The capture takes as long as the frame rate, so reducing the frame rate saves time for quick exposures.
 
 with picamera.PiCamera() as camera:
-    camera.resolution = (2592,1944)
+    # detect camera version so that it resolution can be set
+    if (camera.revision).upper() == "IMX219":
+    	try:
+		camera.resolution = (3280,2464)
+    	except:
+		print("Review readme for change in memory split to full support Camera v2")
+		print("Resolution kept at 2592x1944")
+    		camera.resolution = (2592,1944)
+    else: 
+	#(camera.revision).upper() == "IMX219":
+    	camera.resolution = (2592,1944)
     camera.framerate = Fraction(1, 2)
     camera.iso = 100
     camera.exposure_mode = 'off'
