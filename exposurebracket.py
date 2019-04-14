@@ -45,5 +45,3 @@ with picamera.PiCamera() as camera:
     #0.0008s exposure
     camera.shutter_speed = 800
     camera.capture('ldr_06.jpg')
-
-
