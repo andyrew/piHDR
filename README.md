@@ -45,6 +45,19 @@ sudo mv hdrgen /usr/local/bin/.
 sudo mv hdrcvt /usr/local/bin/.
 ```
 
+### Enabling the camera module (added resolution for PiCamera v2 requires 256MB GPU RAM)
+```
+sudo raspi-config
+select "7 Advanced Options"
+select "A3 Memory Split"
+Enter "256"
+Select "<Ok>"
+Select "<Finish>"
+Select "<Yes>" in answer to "Would you like to reboot now?"
+
+sudo reboot
+```
+
 ### Enabling the camera module
 ```
 sudo raspi-config
