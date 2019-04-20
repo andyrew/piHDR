@@ -11,7 +11,7 @@ export PATH=$PATH:/usr/local/bin/:/home/pi/piHDR
 cd /home/pi/piHDR
  
 # create a directory with date and time. The $dir variable is also used for filenames
-dir=`date +"%y%m%d_%H%M"`
+dir=`date +"%Y%m%d_%H%M"`
 mkdir $dir
 cd $dir
 
