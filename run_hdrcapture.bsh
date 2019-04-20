@@ -22,7 +22,8 @@ python ../exposurebracket.py
 hdrgen -a -r ../picam.rsp -o ${dir}.hdr ldr_0?.jpg
 
 # make a smaller image for quicker analysis
-pfilt -1 -e 1 -x 800 -y 600 ${dir}.hdr > ${dir}.pic
+# pfilt -1 -e 1 -x 800 -y 600 ${dir}.hdr > ${dir}.pic
+pfilt -1 -e 1 ${dir}.hdr > ${dir}.pic
 
 # calculate glare metrics
 evalglare -vta -vv $vv -vh $vh ${dir}.pic > glare.txt &
