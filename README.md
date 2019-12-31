@@ -79,7 +79,7 @@ add the following:
 disable_camera_led=1
 ```
 
-###Watchits:###
+### Watchits: ###
 * Make sure you have the python library picamera (you should)
 * Make sure that you have the camera installed correctly and on the correct port
 https://www.youtube.com/watch?time_continue=152&v=GImeVqHQzsE
