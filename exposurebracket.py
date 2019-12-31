@@ -12,7 +12,7 @@ with picamera.PiCamera() as camera:
     	try:
 		camera.resolution = (3280,2464)
     	except:
-		print("Review readme for change in memory split to full support Camera v2")
+		print("Review readme for change in memory split to get full support for Camera v2")
 		print("Resolution kept at 2592x1944")
     		camera.resolution = (2592,1944)
     else: 
