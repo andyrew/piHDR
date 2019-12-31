@@ -20,6 +20,7 @@ Make sure the pi is set to auto login to the user with the crontab file.
 
 ## Setting up dependencies
 Dependencies include:
+* imagemagic ```sudo apt-get install imagemagick```
 * Radiance (pfilt, evalglare, pcond, falsecolor, ra_tiff http://www.radiance-online.org/)
 * genHDR (http://www.anyhere.com/)
 * python

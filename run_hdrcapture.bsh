@@ -11,7 +11,7 @@ export PATH=$PATH:/usr/local/bin/:/home/pi/piHDR
 cd /home/pi/piHDR
  
 # create a directory with date and time. The $dir variable is also used for filenames
-dir=`date +"%y%m%d_%H%M"`
+dir=`date +"%Y%m%d_%H%M"`
 mkdir $dir
 cd $dir
 
@@ -35,6 +35,10 @@ falsecolor -s 20000 -log 3 -ip ${dir}.pic | ra_tiff -z - ${dir}_f.tif &
 
 #create a tone mapped luminance photo
 pcond ${dir}.pic | ra_tiff -z - ${dir}.tif &
+
+#create a JPG of the tiff for use as well 
+#note: this requires the installition of imageMagick
+convert	${dir}.tif ${dir}.jpg
 
 # wait for the three background analysis processes above to complete. 
 wait
